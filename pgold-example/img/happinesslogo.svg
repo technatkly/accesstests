@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="200" height="64" viewBox="0 0 200 64" xml:space="preserve">
+<desc>Created with Fabric.js 4.6.0</desc>
+<defs>
+</defs>
+<g transform="matrix(1 0 0 1 100 30.18)" style="" id="v7w6k0zApMPSMR8NqJSVk"  >
+<linearGradient id="SVGID_610" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1 0 0 1 -98.37 -26.32)"  x1="3.5447195496647197" y1="29.741561820179854" x2="191.3958048886836" y2="30.116093655385846">
+<stop offset="0%" style="stop-color:#FF5D00;stop-opacity: 1"/>
+<stop offset="54.16318377838191%" style="stop-color:#FFF312;stop-opacity: 1"/>
+<stop offset="100%" style="stop-color:#31A8F7;stop-opacity: 1"/>
+</linearGradient>
+		<text xml:space="preserve" font-family="Takota" font-size="53" font-style="normal" font-weight="700" letter-spacing="0.265" line-height="1" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: url(#SVGID_610); fill-rule: nonzero; opacity: 1; white-space: pre;" ><tspan x="-98.37" y="20.27" >H</tspan><tspan x="-69.59" y="20.27" >a</tspan><tspan x="-47.28" y="20.27" >p</tspan><tspan x="-20.04" y="20.27" >p</tspan><tspan x="7.21" y="20.27" >i</tspan><tspan x="15.95" y="20.27" >n</tspan><tspan x="38.16" y="20.27" >e</tspan><tspan x="59.46" y="20.27" >s</tspan><tspan x="77.7" y="20.27" >s</tspan></text>
+</g>
+</svg>

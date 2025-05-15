@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happiness Everywhere</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <!-- JavaScript Bundle with Popper -->
+
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+  <nav class="navbar bg-light navbar-expand-lg">
+    <div class="container">
+      <a class="narbar-brand" href="/index.html"><img src="img/happinesslogo.svg" alt="Happiness" /></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item me-1">
+            <a class="nav-link rounded-pill px-3" href="#graph">Overview</a>
+          </li>
+          <li class="nav-item me-1">
+            <a class="nav-link rounded-pill px-3" href="#search">Find your country</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded-pill px-3" href="#about">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- end of nav -->
+  <div class="hero">
+    <div class="container" id="hero-container">
+      <div class="hero-text">
+        <p id="p-before-h1">Do you know...</p>
+        <h1>Where is the happiest place?</h1>
+        <p class="lead">
+          Let's find out the happiest place in our world! Perhaps what we find will amaze you!
+        </p>
+        <a type="button" class="btn btn-dark rounded-pill fs-5" id="hero-btn" href="#graph">
+          Get started
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- end of hero -->
+  <div id="graph">
+    <div class="d-flex container text-center flex-wrap justify-content-center align-items-between pt-5 pb-5">
+      <div class="graph-text">
+        <h2>Overview</h2>
+        <p>The 2022 Happiness Report was illustrated in the following aspects: GDP per capita, social support, healthy life expectancy, freedom to make life choices, generosity and perceptions of corruption.</p>
+      </div>
+      <svg id="barchart" width="900" height="600"></svg>
+    </div>
+  </div>
+  <!-- end of graph -->
+  <div id="search">
+    <div class="d-flex container text-center flex-wrap justify-content-center align-content-between pt-5 pb-5"
+      id="search-container">
+      <h2 class="w-100">Find where you are!</h2>
+      <p class="w-100">
+        Just type onto the bar to search yours, or simply find it among
+        options below!
+      </p>
+      <form class="input-group h-25 mb-5">
+        <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+            viewBox="0 0 24 24">
+            <path
+              d="M23.809 21.646l-6.205-6.205c1.167-1.605 1.857-3.579 1.857-5.711 0-5.365-4.365-9.73-9.731-9.73-5.365 0-9.73 4.365-9.73 9.73 0 5.366 4.365 9.73 9.73 9.73 2.034 0 3.923-.627 5.487-1.698l6.238 6.238 2.354-2.354zm-20.955-11.916c0-3.792 3.085-6.877 6.877-6.877s6.877 3.085 6.877 6.877-3.085 6.877-6.877 6.877c-3.793 0-6.877-3.085-6.877-6.877z" />
+          </svg></span>
+        <input id="searchbar" type="search" class="form-control" placeholder="e.g. United Kingdom" aria-label="Search"
+          aria-describedby="search-button" onkeyup="filterCard()" />
+      </form>
+    </div>
+  </div>
+  <!-- end of search -->
+  <div class="results">
+    <div class="container" id="results-container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#afmodal">
+            <img src="img/flags/af.png" class="card-img-top" alt="Afganistan flag" />
+            <div class="card-body">
+              <h5 class="card-title">Afganistan</h5>
+              <p class="card-text">
+                Afganistan, located in the heart of Asia, is known as being rich in resources, however, this makes
+                Afganistan often be in wars, e.g. the USSR invaded there in 1979. As a result, Afganistan has a high
+                level of proverty and terrorism.
+              </p>
+              <p class="card-text">Click in to see its happiness score!</p>
+            </div>
+          </div>
+          <div class="modal fade" id="afmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+              <div class="modal-content">
+                <button type="button" class="btn-close cross-btn p-3" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+                <div class="modal-body">
+                  <div class="modal-text">
+                    <h3 class="modal-title fs-5" id="exampleModalLabel">Afganistan</h3>
+                    <p class="fs-5 pt-2">
+                      World Rank: 146 <br>
+                      Happiness Score: 2,404
+                    </p>
+                    <button type="button" class="btn btn-light modal-btn">Looking for details?</button>
+                    <table class="table d-none modal-table">
+                      <tread>
+                        <tr>
+                          <th scope="col"></th>
+                          <th>Score</th>
+                        </tr>
+                      </tread>
+                      <tbody>
+                        <tr>
+                          <th scope="col">GDP per capita</th>
+                          <td>758</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Social support</th>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Healthy life expectancy</th>
+                          <td>289</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Freedom</th>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Generosity</th>
+                          <td>89</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Corruption</th>
+                          <td>5</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="pt-2">**Higher score means better in its performance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#aumodal">
+            <img src="img/flags/au.png" class="card-img-top" alt="Australia flag" />
+            <div class="card-body">
+              <h5 class="card-title">Australia</h5>
+              <p class="card-text">
+                Australia is well-known as a country with wildlife. People can
+                enjoy their time at numerous country parks with countless
+                species of animals. With an advanced medical system, people
+                are having long life expectancy as well.
+              </p>
+              <p class="card-text">Click in to see its happiness score!</p>
+            </div>
+          </div>
+          <div class="modal fade" id="aumodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+              <div class="modal-content">
+                <button type="button" class="btn-close cross-btn p-3" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+                <div class="modal-body">
+                  <div class="modal-text">
+                    <h3 class="modal-title fs-5" id="exampleModalLabel">Australia</h3>
+                    <p class="fs-5 pt-2">
+                      World Rank: 12 <br>
+                      Happiness Score: 7,162
+                    </p>
+                    <button type="button" class="btn btn-light modal-btn">Looking for details?</button>
+                    <table class="table d-none modal-table">
+                      <tread>
+                        <tr>
+                          <th scope="col"></th>
+                          <th>Score</th>
+                        </tr>
+                      </tread>
+                      <tbody>
+                        <tr>
+                          <th scope="col">GDP per capita</th>
+                          <td>1,900</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Social support</th>
+                          <td>1,203</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Healthy life expectancy</th>
+                          <td>772</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Freedom</th>
+                          <td>676</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Generosity</th>
+                          <td>258</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Corruption</th>
+                          <td>341</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="pt-2">**Higher score means better in its performance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#dkmodal">
+            <img src="img/flags/dk.png" class="card-img-top" alt="Denmark flag" />
+            <div class="card-body">
+              <h5 class="card-title">Denmark</h5>
+              <p class="card-text">
+                Denmark is one of the Nordic countries in Europe. People there are having very high standard of living,
+                with excellent education and health care system. Human rights are highly valued. It also has a
+                democratic system with universal suffrage.
+              </p>
+              <p class="card-text">Click in to see its happiness score!</p>
+            </div>
+          </div>
+          <div class="modal fade" id="dkmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+              <div class="modal-content">
+                <button type="button" class="btn-close cross-btn p-3" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+                <div class="modal-body">
+                  <div class="modal-text">
+                    <h3 class="modal-title fs-5" id="exampleModalLabel">Denmark</h3>
+                    <p class="fs-5 pt-2">
+                      World Rank: 2 <br>
+                      Happiness Score: 7,636
+                    </p>
+                    <button type="button" class="btn btn-light modal-btn">Looking for details?</button>
+                    <table class="table d-none modal-table">
+                      <tread>
+                        <tr>
+                          <th scope="col"></th>
+                          <th>Score</th>
+                        </tr>
+                      </tread>
+                      <tbody>
+                        <tr>
+                          <th scope="col">GDP per capita</th>
+                          <td>1,953</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Social support</th>
+                          <td>1,243</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Healthy life expectancy</th>
+                          <td>777</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Freedom</th>
+                          <td>719</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Generosity</th>
+                          <td>188</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Corruption</th>
+                          <td>532</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="pt-2">**Higher score means better in its performance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#fimodal">
+            <img src="img/flags/fi.png" class="card-img-top" alt="Finland flag" />
+            <div class="card-body">
+              <h5 class="card-title">Finland</h5>
+              <p class="card-text">
+                Finland is one of the Nordic countries in Europe, with its capital in Helsinki. As the country quickly
+                industrialised after WWII, the economy grew fast thus everyone was enjoying decent income. It has been
+                one of the top performers in metrics of national performance.
+              </p>
+              <p class="card-text">Click in to see its happiness score!</p>
+            </div>
+          </div>
+          <div class="modal fade" id="fimodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+              <div class="modal-content">
+                <button type="button" class="btn-close cross-btn p-3" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+                <div class="modal-body">
+                  <div class="modal-text">
+                    <h3 class="modal-title fs-5" id="exampleModalLabel">Finland</h3>
+                    <p class="fs-5 pt-2">
+                      World Rank: 1 <br>
+                      Happiness Score: 7,821
+                    </p>
+                    <button type="button" class="btn btn-light modal-btn">Looking for details?</button>
+                    <table class="table d-none modal-table">
+                      <tread>
+                        <tr>
+                          <th scope="col"></th>
+                          <th>Score</th>
+                        </tr>
+                      </tread>
+                      <tbody>
+                        <tr>
+                          <th scope="col">GDP per capita</th>
+                          <td>1,892</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Social support</th>
+                          <td>1,258</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Healthy life expectancy</th>
+                          <td>775</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Freedom</th>
+                          <td>736</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Generosity</th>
+                          <td>109</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Corruption</th>
+                          <td>534</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="pt-2">**Higher score means better in its performance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#frmodal">
+            <img src="img/flags/fr.png" class="card-img-top" alt="France flag" />
+            <div class="card-body">
+              <h5 class="card-title">France</h5>
+              <p class="card-text">
+                France has long been a global centre of art, science and philosophy, thus being the top choice of
+                tourist destinations. France also has the largest exclusive economic zone in the world, contributing to
+                household wealth and leading to decent living standard.
+              </p>
+              <p class="card-text">Click in to see its happiness score!</p>
+            </div>
+          </div>
+          <div class="modal fade" id="frmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+              <div class="modal-content">
+                <button type="button" class="btn-close cross-btn p-3" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+                <div class="modal-body">
+                  <div class="modal-text">
+                    <h3 class="modal-title fs-5" id="exampleModalLabel">France</h3>
+                    <p class="fs-5 pt-2">
+                      World Rank: 20 <br>
+                      Happiness Score: 6,687
+                    </p>
+                    <button type="button" class="btn btn-light modal-btn">Looking for details?</button>
+                    <table class="table d-none modal-table">
+                      <tread>
+                        <tr>
+                          <th scope="col"></th>
+                          <th>Score</th>
+                        </tr>
+                      </tread>
+                      <tbody>
+                        <tr>
+                          <th scope="col">GDP per capita</th>
+                          <td>1,863</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Social support</th>
+                          <td>1,219</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Healthy life expectancy</th>
+                          <td>808</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Freedom</th>
+                          <td>567</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Generosity</th>
+                          <td>70</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Corruption</th>
+                          <td>266</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="pt-2">**Higher score means better in its performance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#nwmodal">
+            <img src="img/flags/no.png" class="card-img-top" alt="Norway flag" />
+            <div class="card-body">
+              <h5 class="card-title">Norway</h5>
+              <p class="card-text">
+                Norway has long been one of the top 10 most happiest
+                countries. Excellent education system and effective government
+                have boosted citizen's happiness, as well as reducing
+                everyone's pressure on daily needs.
+              </p>
+              <p class="card-text">Click in to see its happiness score!</p>
+            </div>
+          </div>
+          <div class="modal fade" id="nwmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+              <div class="modal-content">
+                <button type="button" class="btn-close cross-btn p-3" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+                <div class="modal-body">
+                  <div class="modal-text">
+                    <h3 class="modal-title fs-5" id="exampleModalLabel">Norway</h3>
+                    <p class="fs-5 pt-2">
+                      World Rank: 8 <br>
+                      Happiness Score: 7365
+                    </p>
+                    <button type="button" class="btn btn-light modal-btn">Looking for details?</button>
+                    <table class="table d-none modal-table">
+                      <tread>
+                        <tr>
+                          <th scope="col"></th>
+                          <th>Score</th>
+                        </tr>
+                      </tread>
+                      <tbody>
+                        <tr>
+                          <th scope="col">GDP per capita</th>
+                          <td>1,997</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Social support</th>
+                          <td>1,239</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Healthy life expectancy</th>
+                          <td>786</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Freedom</th>
+                          <td>728</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Generosity</th>
+                          <td>217</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Corruption</th>
+                          <td>474</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="pt-2">**Higher score means better in its performance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#sgmodal">
+            <img src="img/flags/sg.png" class="card-img-top" alt="Singapore flag" />
+            <div class="card-body">
+              <h5 class="card-title">Singapore</h5>
+              <p class="card-text">
+                Singapore is a tiny country in South-East Asia, but has the 3rd highest population density in the world.
+                As it is highly developed, people enjoy very long life expectancies and high Internet speeds along with
+                low level of corruption in governance.
+              </p>
+              <p class="card-text">Click in to see its happiness score!</p>
+            </div>
+          </div>
+          <div class="modal fade" id="sgmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+              <div class="modal-content">
+                <button type="button" class="btn-close cross-btn p-3" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+                <div class="modal-body">
+                  <div class="modal-text">
+                    <h3 class="modal-title fs-5" id="exampleModalLabel">Singapore</h3>
+                    <p class="fs-5 pt-2">
+                      World Rank: 27 <br>
+                      Happiness Score: 6,480
+                    </p>
+                    <button type="button" class="btn btn-light modal-btn">Looking for details?</button>
+                    <table class="table d-none modal-table">
+                      <tread>
+                        <tr>
+                          <th scope="col"></th>
+                          <th>Score</th>
+                        </tr>
+                      </tread>
+                      <tbody>
+                        <tr>
+                          <th scope="col">GDP per capita</th>
+                          <td>2,149</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Social support</th>
+                          <td>1,127</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Healthy life expectancy</th>
+                          <td>851</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Freedom</th>
+                          <td>672</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Generosity</th>
+                          <td>163</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Corruption</th>
+                          <td>587</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="pt-2">**Higher score means better in its performance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#ukmodal">
+            <img src="img/flags/gb.png" class="card-img-top" alt="UK flag" />
+            <div class="card-body">
+              <h5 class="card-title">United Kingdom</h5>
+              <p class="card-text">
+                The United Kingdom is one of the top countries where people
+                enjoy the free national healthcare, 12-year free education and
+                freedom to do what they want. London, its capital, is one of
+                the main financial centres of the world, contributing to the
+                country's economy.
+              </p>
+              <p class="card-text">Click in to see its happiness score!</p>
+            </div>
+          </div>
+
+          <div class="modal fade" id="ukmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+              <div class="modal-content">
+                <button type="button" class="btn-close cross-btn p-3" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+                <div class="modal-body">
+                  <div class="modal-text">
+                    <h3 class="modal-title fs-5" id="exampleModalLabel">United Kingdom</h3>
+                    <p class="fs-5 pt-2">
+                      World Rank: 17 <br>
+                      Happiness Score: 6,943
+                    </p>
+                    <button type="button" class="btn btn-light modal-btn">Looking for details?</button>
+                    <table class="table d-none modal-table">
+                      <tread>
+                        <tr>
+                          <th scope="col"></th>
+                          <th>Score</th>
+                        </tr>
+                      </tread>
+                      <tbody>
+                        <tr>
+                          <th scope="col">GDP per capita</th>
+                          <td>1,897</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Social support</th>
+                          <td>1,143</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Healthy life expectancy</th>
+                          <td>750</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Freedom</th>
+                          <td>597</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Generosity</th>
+                          <td>289</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Corruption</th>
+                          <td>329</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="pt-2">**Higher score means better in its performance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100" data-bs-toggle="modal" data-bs-target="#usmodal">
+            <img src="img/flags/us.png" class="card-img-top" alt="US flag" />
+            <div class="card-body">
+              <h5 class="card-title">United States</h5>
+              <p class="card-text">
+                United States is the 3rd largest country in the world. It has become the world's largest economy since
+                1900, holding over 30% of total wealth in the world. People enjoy high level of quality of life, but
+                suffer from inequality and poor health care system.
+              </p>
+              <p class="card-text">Click in to see its happiness score!</p>
+            </div>
+          </div>
+          <div class="modal fade" id="usmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+              <div class="modal-content">
+                <button type="button" class="btn-close cross-btn p-3" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+                <div class="modal-body">
+                  <div class="modal-text">
+                    <h3 class="modal-title fs-5" id="exampleModalLabel">United States</h3>
+                    <p class="fs-5 pt-2">
+                      World Rank: 16 <br>
+                      Happiness Score: 6,977
+                    </p>
+                    <button type="button" class="btn btn-light modal-btn">Looking for details?</button>
+                    <table class="table d-none modal-table">
+                      <tread>
+                        <tr>
+                          <th scope="col"></th>
+                          <th>Score</th>
+                        </tr>
+                      </tread>
+                      <tbody>
+                        <tr>
+                          <th scope="col">GDP per capita</th>
+                          <td>1,982</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Social support</th>
+                          <td>1,182</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Healthy life expectancy</th>
+                          <td>628</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Freedom</th>
+                          <td>574</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Generosity</th>
+                          <td>220</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Corruption</th>
+                          <td>177</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="pt-2">**Higher score means better in its performance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="search-failure"
+        class="search-failure text-center d-flex justify-content-center align-items-center d-none">
+        <img src="img/404-image.png" class="mb-4" alt="Not found" height="195px" width="256px">
+        <h3 class="mb-2">No results found</h3>
+        <p class="mb-2">Uh oh, looks like we don't have your country here yet. You can try to enter the full name of
+          your country, e.g. United States, to maximise the chance we can find it. We will update all countries'
+          happiness scores very soon, so stay tuned!</p>
+      </div>
+    </div>
+  </div>
+  <!-- end of results -->
+  <div id="contact">
+    <div class="container">
+      <form class="d-flex flex-wrap justify-content-between pt-3 pb-3">
+        <div class="contact-text center-text">
+          <h2>Wanna get updates ASAP?</h2>
+          <p>Fill in the form here now! No spam, we promise! ☺︎</p>
+        </div>
+        <div class="d-flex flex-wrap">
+          <div class="me-3 mb-3">
+            <label for="input-name" class="form-label">Your name</label>
+            <input type="text" class="form-control" id="input-name" required>
+          </div>
+          <div class="me-3 mb-3">
+            <label for="input-email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="input-email" aria-describedby="emailHelp" required>
+          </div>
+          <div class="me-3">
+            <label for="input-country" class="form-label">Your country</label>
+            <input type="text" class="form-control" id="input-country" required>
+          </div>
+          <button id="subscribe" type="button" class="btn btn-primary rounded-pill align-self-center">Subscribe</button>
+        </div>
+        <div id="alert" class="alert alert-success alert-dismissible fade w-100 d-flex align-items-center mt-3" role="alert">
+          <svg id="success-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.959 17l-4.5-4.319 1.395-1.435 3.08 2.937 7.021-7.183 1.422 1.409-8.418 8.591z"/></svg>
+          <p id="alert-text" class="mb-0">You should check in on some of those fields below.</p>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- end of contact -->
+  <div id="about">
+    <div class="container" id="about-container">
+      <div class="about-text">
+        <h2>About This Page</h2>
+        <p>
+          This page and the data are based on
+          <a class="underline" href="https://worldhappiness.report/">World Happiness Report 2022</a>. Kudos to the
+          creators of the Report. Many thanks to
+          <a class="underline"
+            href="https://unsplash.com/@priscilladupreez?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Priscilla
+            Du Preez</a> on
+          <a class="underline"
+            href="https://unsplash.com/s/photos/friends-laughing?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+          for providing photos,
+          <a class="underline" href="https://countryflagsapi.com/">CountryFlagsAPI</a> for providing country flag
+          pictures,
+          <a class="underline" href="https://icons8.com/illustrations/author/zD2oqC8lLBBA">Icons 8</a> from <a
+            class="underline" href="https://icons8.com/illustrations">Ouch!</a> for providing illustrations, and
+          <a class="underline" href="https://iconmonstr.com/">iconmonstr</a>
+          for providing icons used on the page.
+        </p>
+        <div class="footer text-white-50 py-4">
+          <p>© 2022 Nathan Lam. Created with ⏰ and 💛. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+
+</html>
+
+<!--
+  Reference / Adapted and modified from:
+  Mozilla (2022) CSS: Cascading Style Sheets | MDN. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS (Accessed: 1 Nov 2022).
+  Bootsrap (2022) Boostrap v5.2. Available at: https://getbootstrap.com/docs/5.2/ (Accessed: 1 Nov 2022)
+-->

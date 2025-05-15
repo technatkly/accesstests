@@ -1,0 +1,361 @@
+/* ------------------------
+  Adapted and modified from Josh's Custom CSS Reset
+
+  Comeau, J.W. (2021) My Custom CSS Reset. Available at: https://www.joshwcomeau.com/css/custom-css-reset/ (Accessed: 26 Oct 2022).
+  -------------------------*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* -------------------
+  FONTS IN USE
+  -------------------- */
+@font-face {
+    font-family: 'Figtree';
+    src: url('font/Figtree-SemiBold.woff2') format('woff2'),
+        url('font/Figtree-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('font/Figtree-Light.woff2') format('woff2'),
+        url('font/Figtree-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('font/Figtree-Bold.woff2') format('woff2'),
+        url('font/Figtree-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('font/Figtree-Medium.woff2') format('woff2'),
+        url('font/Figtree-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('font/Figtree-Italic.woff2') format('woff2'),
+        url('font/Figtree-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('font/Figtree-Regular.woff2') format('woff2'),
+        url('font/Figtree-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* -------------------
+  MAIN -- start with navbar
+  -------------------- */
+
+:root {
+    --black: #1b1c1e;
+    --white: #ffffff;
+    --glacier: #def2f1;
+    --grey: rgb(240, 240, 240);
+    --orange: #ffc02d;
+    --dark-orange: #efb01c;
+    --cauliflower: #F2E2C7;
+    --dark-cauliflower: #f1c478;
+    --lilac: #DFC7F2;
+    --purple: #8C3B7E;
+    --dark-purple: #722665;
+    --dark-blue: #263f5d;
+
+
+}
+
+body {
+    font-family: 'Figtree', sans-serif;
+    background-color: var(--glacier);
+    color: var(--black);
+}
+
+.navbar-nav {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.nav-item>a:hover,
+a:focus {
+    background-color: var(--grey);
+}
+
+.nav-link {
+    color: var(--black);
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+/* -------------------
+  HERO SECTION
+  -------------------- */
+div.hero {
+    background-image: url(img/priscilla-du-preez-mKJUoZPy70I-unsplash.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    box-shadow: inset 0 0 0 2000px rgba(255, 255, 255, 0.5);
+}
+
+.hero-text {
+    padding-top: 8rem;
+    padding-bottom: 12rem;
+}
+
+p {
+    max-width: 75ch;
+}
+
+#p-before-h1 {
+    font-weight: 500;
+    margin-bottom: 0px;
+    font-family: "Figtree", "poppins", sans-serif;
+}
+
+h1 {
+    margin-top: 0px;
+    font-family: "Figtree", "poppins", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.lead {
+    font-weight: 400;
+}
+
+button.btn {
+    font-size: 1.25rem;
+}
+
+#hero-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    border: none;
+    background-color: var(--orange);
+    color: var(--black);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+#hero-btn:hover {
+    transition: background-color 2s ease-out, transform 150ms;
+    background-color: var(--dark-orange);
+    transform: scale(1.05);
+}
+/* -------------------
+  GRAPH SECTION
+  -------------------- */
+#graph {
+    background-color: var(--white);
+}
+
+/* -------------------
+  SEARCH SECTION
+  -------------------- */
+h2 {
+    font-family: "Figtree", "poppins", sans-serif;
+    font-weight: 600;
+    font-size: 2.4rem;
+}
+
+.input-group {
+    max-width: 700px;
+}
+
+.input-group-text {
+    background-color: var(--white);
+}
+
+.search-failure {
+    flex-direction: column;
+}
+
+/* -------------------
+  RESULT SECTION
+  -------------------- */
+
+#results-container {
+    padding-bottom: 4rem;
+}
+
+.card-img-top {
+    max-height: 207px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: transform 150ms ease-in-out;
+}
+
+.cross-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1056;
+}
+
+.modal-btn {
+    background-color: var(--cauliflower);
+    padding: 0.5rem 0.75rem;
+}
+
+.modal-btn::after {
+    display: inline-block;
+    padding-left: 4px;
+    content: "\0279E";
+    transition: transform 0.25s ease-out;
+}
+
+.modal-btn:hover {
+    background-color: var(--dark-cauliflower);
+    border-color: var(--dark-cauliflower);
+}
+.modal-btn:hover::after {
+    transform: rotate(90deg);
+}
+
+/* -------------------
+  CONTACT FORM SECTION
+  -------------------- */
+#contact {
+    background-color: var(--lilac);
+}
+
+.form-control {
+    min-width: 280px;
+}
+
+#subscribe {
+    background-color: var(--purple);
+    border-color: transparent;
+}
+
+#subscribe:hover {
+    background-color: var(--dark-purple);
+    border-color: var(--dark-purple);
+}
+
+#success-icon {
+    fill: #255035;
+    margin-right: 1rem;
+}
+
+/* -------------------
+  ABOUT SECTION
+  -------------------- */
+
+#about {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding-top: 3rem;
+}
+
+/* ------------------------
+  Reference:
+  30 seconds of code (2021) Hover Underline Animation. Available at: https://www.30secondsofcode.org/css/s/hover-underline-animation (Accessed: 1 Nov 2022).
+  -------------------------*/
+.underline {
+    display: inline-block;
+    position: relative;
+}
+
+.underline::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--white);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-in-out;
+}
+
+
+a.underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/*
+  Reference:
+  Mozilla (2022) CSS: Cascading Style Sheets | MDN. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS (Accessed: 1 Nov 2022).
+*/
